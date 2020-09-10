@@ -29,6 +29,7 @@ const knex = Knex(config);
 let checkJwt;
 jest.mock('jsdom')
 jest.mock('../src/middleware/acl/checkJwt')
+const mocks  = require('./mock.factories');
 
 describe('Farm Tests', () => {
   let middleware;
@@ -37,7 +38,10 @@ describe('Farm Tests', () => {
     // global.token is set in testEnvironment.js
     token = global.token;
   });
-
+  let array =[];
+  let beforeEachCounter = 1;
+  let testCounter = 2;
+  let afterEachCounter = 3;
   async function createUser(email, id) {
     let validSignupUser = {
       email: email || 'test123456_signup@usertest.com',
@@ -64,6 +68,8 @@ describe('Farm Tests', () => {
   }
 
   beforeEach(async () => {
+    array.push(beforeEachCounter);
+    beforeEachCounter += 4;
     let [newUser] = await createUser();
     middleware = require('../src/middleware/acl/checkJwt');
     middleware.mockImplementation((req, res, next) => {
@@ -76,16 +82,22 @@ describe('Farm Tests', () => {
   const later = async (delay) =>
     new Promise(resolve => setTimeout(resolve, delay));
   afterEach(async () => {
-    await later(1000);
+    array.push(afterEachCounter);
+    afterEachCounter += 1;
+    await later(100);
     await knex.raw(`
     DELETE FROM "userFarm";
     DELETE FROM farm;
     DELETE FROM users ;
     `)
-    const end=1;
+    array.push(afterEachCounter);
+    afterEachCounter += 3;
   });
+  afterAll(()=>{
+    console.log(array);
+  })
 
-  describe('Valid and Invalid Inputs', () => {
+  describe('Valid and Invalid Inputs', async () => {
     const blankFark = {
       farm_name: '',
       address: '',
@@ -103,35 +115,49 @@ describe('Farm Tests', () => {
       }
     }
 
-    test('should return 400 status if blank farm is posted', (done) => {
-      postFarmRequest(blankFark, (err, res) => {
+    test('should return 400 status if blank farm is posted', async (done) => {
+      array.push(testCounter);
+      testCounter += 4;
+      throw new Error('I have failed you, Anakin')
+      postFarmRequest(blankFark, async (err, res) => {
+        await later(100);
         expect(res.status).toBe(400);
         done()
       })
     });
 
-    test('should return 400 status if only farm name is filled', (done) => {
-      postFarmRequest({ ...blankFark, farm_name: 'Test Farm' }, (err, res) => {
+    test('should return 400 status if only farm name is filled', async (done) => {
+      array.push(testCounter);
+      testCounter += 4;
+      throw new Error('I have failed you, Anakin')
+      postFarmRequest({ ...blankFark, farm_name: 'Test Farm' }, async (err, res) => {
+        await later(100);
         expect(res.status).toBe(400);
         done();
       })
     });
 
-    test('should return 400 status if name and invalid address are filled', (done) => {
+    test('should return 400 status if name and invalid address are filled', async (done) => {
+      array.push(testCounter);
+      testCounter += 4;
+      throw new Error('I have failed you, Anakin')
       postFarmRequest({
           ...blankFark,
           farm_name: 'Test Farm',
           address: 'ANSOFANSOD',
           grid_points: { lat: 'sa', long: '212' }
         },
-        (err, res) => {
+        async (err, res) => {
           expect(res.status).toBe(400);
           done();
         })
     });
 
-    test('should successfully create a farm if valid data is provided', (done) => {
-      postFarmRequest(validFarm, (err, res) => {
+    test('should successfully create a farm if valid data is provided', async (done) => {
+      array.push(testCounter);
+      testCounter += 4;
+      throw new Error('I have failed you, Anakin')
+      postFarmRequest(validFarm, async (err, res) => {
         expect(res.status).toBe(201);
         const farm = res.body;
         expect(farm.units.currency).toBe('USD');
@@ -142,6 +168,9 @@ describe('Farm Tests', () => {
     });
 
     test('should retrieve a recently created farm', (done) => {
+      array.push(testCounter);
+      testCounter += 4;
+      throw new Error('I have failed you, Anakin')
       postFarmRequest(validFarm, (err, res) => {
         expect(res.status).toBe(201);
         const farmId = res.body.farm_id;
@@ -155,6 +184,8 @@ describe('Farm Tests', () => {
     })
 
     test('should retrieve a recently created farm with units and currency', (done) => {
+      array.push(testCounter);
+      testCounter += 4;
       postFarmRequest({...validFarm, units: { measurement: 'imperial', currency: 'MXN'}  }, (err, res) => {
         expect(res.status).toBe(201);
         const farmId = res.body.farm_id;
@@ -171,6 +202,9 @@ describe('Farm Tests', () => {
 
   describe('Updating a Farm', () => {
     test('should fail to patch an address on a created farm', async (done) => {
+      array.push(testCounter);
+      testCounter += 4;
+      throw new Error('I have failed you, Anakin')
       const [user] = await createUser('test@test.com', 'asfnaosfnaod');
       const farm = await createFarm(user.user_id);
       putFarmRequest({ farm_id: farm.farm_id, address: farm.address + '2222' },user.user_id, (err, res) => {
@@ -180,6 +214,9 @@ describe('Farm Tests', () => {
     });
 
     test('should succeed to change farm name', async (done) => {
+      array.push(testCounter);
+      testCounter += 4;
+      throw new Error('I have failed you, Anakin');
       const [user] = await createUser('test@test.com', 'asfnaosfnaod');
       const farm = await createFarm(user.user_id);
       putFarmRequest({ farm_id: farm.farm_id, farm_name: 'OtherTestFarm' }, user.user_id, async (err,res) => {
@@ -195,7 +232,10 @@ describe('Farm Tests', () => {
   });
 
   describe('Delete a Farm', () => {
+
     test('should succeed on deleting a farm that I own or manage', async (done) => {
+      array.push(testCounter);
+      testCounter += 4;
       const [user] = await createUser('test@test.com', 'asfnaosfnaod');
       const farm = await createFarm(user.user_id);
       deleteRequest(farm, user.user_id, async (err,res) => {
