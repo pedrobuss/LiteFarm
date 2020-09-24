@@ -11,7 +11,7 @@ import { Glyphicon, Grid, Row, Col, Button } from 'react-bootstrap';
 import closeButton from '../../../assets/images/grey_close_button.png'
 import Popup from "reactjs-popup";
 import history from '../../../history';
-import {toastr} from "react-redux-toastr";
+
 import {updateShift} from '../actions';
 import { shiftRatings } from '../constants';
 
@@ -736,26 +736,27 @@ class EditShiftTwo extends Component {
           open={this.state.showEdit}
           closeOnDocumentClick
           onClose={this.closeEditModal}
-          contentStyle={{ display: 'flex', width: '100%', height: '100vh', padding: '0 5%' }}
-          overlayStyle={{ zIndex: '1060', height: '100vh' }}
+          contentStyle={{display: 'flex', width: '100%', height: '100vh', padding: '0 5%'}}
+          overlayStyle={{zIndex: '1060', height: '100vh'}}
         >
           <div className={styles.modal}>
             <div className={styles.popupTitle}>
               <a className={styles.close} onClick={this.closeEditModal}>
-                <img src={closeButton} alt="" />
+                <img src={closeButton} alt=""/>
               </a>
             </div>
             <h3>How did this shift make you feel?</h3>
             <Grid fluid={true}
-              style={{ marginLeft: 0, marginRight: 0, padding: '0 3%', marginTop: '5%', width: '100%' }}>
+              style={{marginLeft: 0, marginRight: 0, padding: '0 3%', marginTop: '5%', width: '100%'}}>
               <Row className="show-grid">
                 {
-                  shiftRatings.map((shiftRating) => {
+                  shiftRatings.map((shiftRating, index) => {
                     const { key, icon, label } = shiftRating;
                     const { mood, moodSelected, moodUnSelected } = this.state;
-                    return (
-                      <Col xs={4} md={4}>
-                        <div className={styles.moodContainer} onClick={() => this.selectMood(key)}>
+                    return  (
+                      <Col key={index} xs={4} md={4}> 
+                        <div 
+                         onClick={() => this.selectMood(key)}>
                           <div style={mood === key ? moodSelected : moodUnSelected}>
                             <h2>{icon}</h2>
                           </div>
@@ -767,10 +768,10 @@ class EditShiftTwo extends Component {
                 }
               </Row>
             </Grid>
+            </div>
             <div className={styles.buttonContainer}>
               <Button onClick={() => this.submitShift()}>Finish</Button>
             </div>
-          </div>
         </Popup>
       </div>
     )
