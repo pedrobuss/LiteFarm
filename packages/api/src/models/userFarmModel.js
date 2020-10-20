@@ -54,6 +54,12 @@ class userFarm extends Model {
             amount:{ type: 'number' },
           },
         },
+        step_one: { type: ['boolean', 'null'] },
+        step_one_end: { type: 'string' },
+        step_two: { type: ['boolean', 'null'] },
+        step_two_end: { type: 'string' },
+        step_three: { type: ['boolean', 'null'] },
+        step_three_end: { type: 'string' },
       },
       additionalProperties: false,
     };
