@@ -15,14 +15,12 @@ class Outro extends Component {
     }
 
     redirectFinish() {
-        console.log(this.props)
         const { farm } = this.props;
-        console.log("farm is")
-        console.log(farm)
         if (farm) {
-            console.log("farm is not null")
+            // TODO replace with Brandon's Splotlight component
             history.push('/home')
         }
+        // TODO: add else case wih Jimmy's organic farm 
       }
 
     render() {
