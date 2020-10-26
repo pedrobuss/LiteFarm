@@ -3,11 +3,27 @@ import React, {Component} from "react";
 import styles from "./styles.scss";
 import Footer from '../../stories/Footer/index';
 import Button from '../../stories/Button/index'
+import {connect} from 'react-redux';
+import {farmSelector} from '../selector';
+import history from '../../history';
+// import {Button} from 'react-bootstrap';
 
 class Outro extends Component {
     constructor(props) {
-        super(props);
+    super(props);
+    this.redirectFinish = this.redirectFinish.bind(this)
     }
+
+    redirectFinish() {
+        console.log(this.props)
+        const { farm } = this.props;
+        console.log("farm is")
+        console.log(farm)
+        if (farm) {
+            console.log("farm is not null")
+            history.push('/home')
+        }
+      }
 
     render() {
         return (
@@ -22,7 +38,10 @@ class Outro extends Component {
                         </div>
                     
                         <Footer
-                            children={<><Button fullLength color="secondary" children='Go back'/><Button fullLength children='Finish'/></>}
+                            children={<><Button fullLength color="secondary" children='Go back'/>
+                            
+                                        <Button fullLength children='Finish' onClick={this.redirectFinish}/>
+                                        </>}
                         >
 
                        
@@ -34,4 +53,10 @@ class Outro extends Component {
     }
 }
 
-export default Outro
+const mapStateToProps = (state) => {
+    return {
+      farm: farmSelector(state),
+    }
+  };
+  
+  export default connect(mapStateToProps)(Outro);

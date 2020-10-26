@@ -17,7 +17,8 @@ const Button = ({
     <button
       disabled={disabled}
       className={clsx(styles.btn, styles[color], classes.btn, fullLength && styles.fullLength)}
-      onClick
+      onClick={onClick}
+      // type={type}
       {...props}
     >
       {children}
