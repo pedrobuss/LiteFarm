@@ -11,6 +11,8 @@ const Button = ({
   fullLength = false,
   classes = { btn: "" },
   onClick,
+  type,
+  width,
   ...props
 }) => {
   return (
@@ -18,7 +20,7 @@ const Button = ({
       disabled={disabled}
       className={clsx(styles.btn, styles[color], classes.btn, fullLength && styles.fullLength)}
       onClick={onClick}
-      // type={type}
+      type={type}
       {...props}
     >
       {children}
@@ -33,6 +35,7 @@ Button.propTypes = {
   children: PropTypes.string,
   classes: PropTypes.exact({btn: PropTypes.string}),
   onClick: PropTypes.func,
+  width: PropTypes.number
 }
 
 export default Button;

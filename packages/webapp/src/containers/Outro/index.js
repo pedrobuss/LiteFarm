@@ -6,7 +6,6 @@ import Button from '../../stories/Button/index'
 import {connect} from 'react-redux';
 import {farmSelector} from '../selector';
 import history from '../../history';
-// import {Button} from 'react-bootstrap';
 
 class Outro extends Component {
     constructor(props) {
@@ -27,24 +26,19 @@ class Outro extends Component {
         return (
             <div className={styles.home}> 
                 <div className={styles.lander}>
-                    <div>
                         <div className={styles.greetContainer}>
                         <img src={OutroImg}/>
                             <div className={styles.description}> 
                                 <h3>{`And finally, let us show you a couple of important things!`}</h3>
                             </div>
                         </div>
-                    
                         <Footer
                             children={<><Button fullLength color="secondary" children='Go back'/>
                             
                                         <Button fullLength children='Finish' onClick={this.redirectFinish}/>
                                         </>}
                         >
-
-                       
                         </Footer>
-                        </div>
                     </div>
                 </div>
         )
