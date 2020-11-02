@@ -15,8 +15,8 @@
 @import "../../../stories/assets/mixin";
 
 .button {
-    margin: 7px;
-    float:right;
+  margin: 7px;
+  float: right;
 }
 
 .navBar {
@@ -26,6 +26,8 @@
   max-width: 1024px;
   min-height: 72px;
   position: fixed;
+  z-index: 1;
+
   & .itemContainer {
     position: absolute;
     top: 50%;
@@ -55,12 +57,12 @@
   border-radius: 16px;
   top: 10px;
   right: 10px;
-  float:right;
+  float: right;
   margin-right: 24px;
 }
 
 .actionItemContainer {
-  float:right;
+  float: right;
   margin-top: 24px;
   margin-right: 12px;
 }
@@ -73,12 +75,12 @@
   padding: 0;
 }
 
-.navBarContainer{
+.navBarContainer {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   flex-direction: row;
   justify-content: space-between;
-  width:100%;
+  width: 100%;
   align-items: center;
   margin: 0 auto;
   text-align: -webkit-right;
