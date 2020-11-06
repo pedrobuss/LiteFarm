@@ -14,7 +14,6 @@
  */
 
 import { CREATE_FARM, SET_ROLE } from "./constants";
-import { getFarms } from '../ChooseFarm/actions';
 import history from '../../history';
 import { takeEvery, call, put } from 'redux-saga/effects';
 import apiConfig from '../../apiConfig';
