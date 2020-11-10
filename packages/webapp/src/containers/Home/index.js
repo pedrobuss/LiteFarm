@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Modal } from 'react';
 import { useSelector } from "react-redux";
 import { farmSelector, userInfoSelector } from "../selector";
 import { getSeason } from "./utils/season";
 import { toastr } from "react-redux-toastr";
 import WeatherBoard from "../../containers/WeatherBoard";
 import PureHome from "../../components/Home";
+import PureFarmSwitchOutroSplash from '../../components/SwitchFarmOutro'
 // import Auth from '../../Auth/Auth';
 //TODO Auth0 breaks storybook
 export default function Home() {
@@ -51,10 +52,13 @@ export default function Home() {
 
   return <PureHome title={`Good day, ${user?.first_name}`}
                                  imgUrl={imgUrl}>
-    {farm && user? <WeatherBoard lon={farm.grid_points.lng}
-                                 lat={farm.grid_points.lat}
-                                 lang={'en'}
-                                 measurement={farm.units.measurement}/>: null}
+    {farm && user? 
+    <PureFarmSwitchOutroSplash />: null
+    // <WeatherBoard lon={farm.grid_points.lng}
+    //                              lat={farm.grid_points.lat}
+    //                              lang={'en'}
+    //                              measurement={farm.units.measurement}/>: null
+                                 }
 
   </PureHome>
 }
