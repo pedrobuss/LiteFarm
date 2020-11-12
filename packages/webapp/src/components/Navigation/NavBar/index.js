@@ -32,10 +32,10 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
               {
                 options: {
                   // modal arrow and background color
-                  arrowColor: "#eee",
-                  backgroundColor: "#eee",
+                  arrowColor: "#fff",
+                  backgroundColor: "#fff",
                   // page overlay color
-                  overlayColor: "rgba(36, 39, 48, 0.5)",
+                  overlayColor: "#FFFFF",
                   //button color
                   // primaryColor: "#06AB16",
                   primaryColor: "#FCE38D",
