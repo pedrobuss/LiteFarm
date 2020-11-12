@@ -71,7 +71,7 @@ const NavBar = (props) => {
         title: returnContent("This is your farm profile", true),
         content: returnContent(farmSpotlight, false),
         locale: {
-          next: returnNextButton("Next (1/3)"),
+          next: returnNextButton("Next"),
           back: returnBackButton(),
         },
         placement: "bottom-start",
@@ -82,7 +82,7 @@ const NavBar = (props) => {
         title: returnContent("This is your Notification Centre", true),
         content: returnContent(notificationsSpotlight, false),
         locale: {
-          next: returnNextButton("Next (2/3)"),
+          next: returnNextButton("Next"),
           back: returnBackButton(),
         },
         placement: "bottom-start",
@@ -93,7 +93,7 @@ const NavBar = (props) => {
         title: returnContent("This is your profile", true),
         content: returnContent(myProfileSpotlight, false),
         locale: {
-          last: returnNextButton("Got it (3/3)"),
+          last: returnNextButton("Got it"),
           back: returnBackButton(),
         },
         placement: "left-start",
