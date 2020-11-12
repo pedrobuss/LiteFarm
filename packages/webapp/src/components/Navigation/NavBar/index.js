@@ -26,7 +26,6 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
           steps={steps}
           run={steps.run}
           continuous
-          showSkipButton
           callback={resetSpotlightStatus}
           styles=
             {
