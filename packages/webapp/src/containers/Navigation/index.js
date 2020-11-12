@@ -70,6 +70,7 @@ const NavBar = (props) => {
         placement: "bottom-start",
         showCloseButton: false,
         disableBeacon:true,
+        
       },
       {
         target: "#secondStep",

@@ -16,7 +16,6 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
     }
   }
 
-
   return (
     <div className={styles.navBar}>
       <div className={styles.actionItemContainer}>
@@ -24,8 +23,10 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
         {steps &&
         <ReactJoyride
           steps={steps}
+          run={steps}
           continuous
           callback={resetSpotlightStatus}
+          floaterProps={{ disableAnimation: true }}
           styles=
             {
               {
@@ -51,7 +52,7 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
                 },
                 buttonBack: {
                   display: 'none',
-                }
+                },
 
               }
 
