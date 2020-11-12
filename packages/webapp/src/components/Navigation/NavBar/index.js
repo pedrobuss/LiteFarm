@@ -38,7 +38,7 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
                   overlayColor: "rgba(36, 39, 48, 0.5)",
                   //button color
                   // primaryColor: "#06AB16",
-                  primaryColor: "#FED450",
+                  primaryColor: "#FCE38D",
                   //text color
                   // textColor: "##000000",
                   //width of modal
