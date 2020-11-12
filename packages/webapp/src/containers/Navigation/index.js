@@ -42,12 +42,12 @@ const NavBar = (props) => {
   const notificationsSpotlight = "Here you can:, • Manage your tasks, • See important updates, • Coordinate farm activities";
   const myProfileSpotlight = "Here you will find:, • Your info, • Helpful tips, • The log out button";
 
-  const returnContent = (spotlightType) => {
+  const returnContent = (spotlightType, title) => {
     return spotlightType.split(',').map(function(item, key) {
       return (
-        <span key={key}>
+        title ? <span key={key} className={styles1.green}>
         <p align="left">{item}</p>
-        </span>
+        </span>: <span key={key}><p align="left">{item}</p></span>
       )
     })
   }
@@ -64,11 +64,12 @@ const NavBar = (props) => {
     )
   }
 
+
   const steps = [
       {
         target: "#firstStep",
-        title: <span className={styles1.green}>This is your farm profile</span>,
-        content: returnContent(farmSpotlight),
+        title: returnContent("This is your farm profile", true),
+        content: returnContent(farmSpotlight, false),
         locale: {
           next: returnNextButton("Next (1/3)"),
           back: returnBackButton(),
@@ -78,8 +79,8 @@ const NavBar = (props) => {
       },
       {
         target: "#secondStep",
-        title: <span className={styles1.green}>This is your Notification Centre</span>,
-        content: returnContent(notificationsSpotlight),
+        title: returnContent("This is your Notification Centre", true),
+        content: returnContent(notificationsSpotlight, false),
         locale: {
           next: returnNextButton("Next (2/3)"),
           back: returnBackButton(),
@@ -89,8 +90,8 @@ const NavBar = (props) => {
       },
       {
         target: "#thirdStep",
-        title: <span className={styles1.green}>This is your profile</span>,
-        content: returnContent(myProfileSpotlight),
+        title: returnContent("This is your profile", true),
+        content: returnContent(myProfileSpotlight, false),
         locale: {
           last: returnNextButton("Got it (3/3)"),
           back: returnBackButton(),
