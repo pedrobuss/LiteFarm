@@ -49,6 +49,9 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
                 },
                 buttonClose: {
                   display: 'none',
+                },
+                buttonBack: {
+                  display: 'none',
                 }
 
               }
