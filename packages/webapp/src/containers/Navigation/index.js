@@ -58,12 +58,6 @@ const NavBar = (props) => {
     )
   }
 
-  const returnBackButton = () => {
-    return (
-      <span className={styles1.black}>Back</span>
-    )
-  }
-
 
   const steps = [
       {
@@ -72,7 +66,6 @@ const NavBar = (props) => {
         content: returnContent(farmSpotlight, false),
         locale: {
           next: returnNextButton("Next"),
-          back: returnBackButton(),
         },
         placement: "bottom-start",
         showCloseButton: false,
@@ -84,10 +77,9 @@ const NavBar = (props) => {
         content: returnContent(notificationsSpotlight, false),
         locale: {
           next: returnNextButton("Next"),
-          back: returnBackButton(),
         },
         placement: "bottom-start",
-        showCloseButton: false
+        showCloseButton: false,
       },
       {
         target: "#thirdStep",
@@ -95,7 +87,6 @@ const NavBar = (props) => {
         content: returnContent(myProfileSpotlight, false),
         locale: {
           last: returnNextButton("Got it"),
-          back: returnBackButton(),
         },
         placement: "left-start",
         showCloseButton: false,
