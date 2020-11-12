@@ -24,7 +24,6 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
         {steps &&
         <ReactJoyride
           steps={steps}
-          run={steps.run}
           continuous
           callback={resetSpotlightStatus}
           styles=
@@ -35,7 +34,7 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
                   arrowColor: "#fff",
                   backgroundColor: "#fff",
                   // page overlay color
-                  overlayColor: "#FFFFF",
+                  overlayColor: "rgba(36, 39, 48, 0.5)",
                   //button color
                   // primaryColor: "#06AB16",
                   primaryColor: "#FCE38D",
