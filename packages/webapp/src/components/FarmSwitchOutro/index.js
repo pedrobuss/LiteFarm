@@ -14,20 +14,18 @@ export default function FarmSwitchPureOutroSplash({onContinue, onGoBack}) {
   return (
     <div className={styles.outroContainer}>
       <div className={styles.title}>
-      {`Switching Farms`}
+        {`Switching Farms`}
       </div>
       <div className={styles.imgContainer}>
-      <img src={OutroImg}/>
+        <img src={OutroImg}/>
       </div>
       <div className={styles.description}>
         {description}
         {newFarm}
       </div>
-      <div className={styles.bottomContainer}>
       <Footer>
-        <Button children="Let's Go"></Button>
+        <Button className={styles.bottomContainer} children="Let's Go"></Button>
       </Footer>
-      </div>
 
 
     </div>
