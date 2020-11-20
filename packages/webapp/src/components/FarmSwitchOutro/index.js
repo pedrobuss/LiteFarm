@@ -4,11 +4,11 @@ import Footer from "../Footer";
 import Button from "../Form/Button";
 import React from "react";
 
-export default function FarmSwitchPureOutroSplash({onContinue, onGoBack}) {
+export default function FarmSwitchPureOutroSplash({onContinue}) {
 
   // TODO: Get farm name from store 
-  const newFarm = "Garden of Eden."
-  const description = "The barn door is secure. Heading to " 
+  const newFarm = "Garden of Eden.";
+  const description = "The barn door is secure. Heading to " + newFarm;
 
   
   return (
@@ -19,12 +19,14 @@ export default function FarmSwitchPureOutroSplash({onContinue, onGoBack}) {
       <div className={styles.imgContainer}>
         <img src={OutroImg}/>
       </div>
+
       <div className={styles.description}>
-        {description}
-        {newFarm}
+        {/* <div className={styles.descriptionFarm} attr="Garden of Eden"> */}
+          {description}
+        {/* </div> */}
       </div>
       <Footer>
-        <Button className={styles.bottomContainer} children="Let's Go"></Button>
+        <Button className={styles.bottomContainer} children="Let's Go!"></Button>
       </Footer>
 
 
