@@ -5,7 +5,7 @@ import ProfilePicture from "../../../assets/images/navbar/defaultpfp.png"; // TO
 import React, { useState } from "react";
 import ReactJoyride, { STATUS } from 'react-joyride';
 import ProfileFloater from "../../../containers/ProfileFloater";
-import FarmSwitchOutro from "../../../components/FarmSwitchOutro";
+import FarmSwitchOutro from "../../../containers/FarmSwitchOutro";
 
 export default function PureNavBar({ logo, children, steps, resetSpotlight, auth }) {
   const initialState = { profile: false, switchFarmOutro: false };
@@ -66,8 +66,9 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
         />
 
         }
-
+        <FarmSwitchOutro>
         <input id="firstStep" type="image" src={MyFarmIcon} className={styles.actionItem}/>
+        </FarmSwitchOutro>
         <input id="secondStep" type="image" src={NotifIcon} className={styles.actionItem}/>
         <ProfileFloater auth={auth}>
           <input data-testid="thirdStep" id="thirdStep" type="image" src={ProfilePicture} className={styles.profilePicture} onClick={() =>changeInteraction('profile')} />
@@ -83,7 +84,7 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
             backgroundColor: "rgba(0, 0, 0, 0.01)"}} onClick={() => changeInteraction('', true)} />
         }
 
-        <FarmSwitchOutro />
+        
       </div>
       
       <div className={styles.itemContainer}>

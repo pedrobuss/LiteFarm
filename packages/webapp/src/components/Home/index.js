@@ -1,6 +1,7 @@
 import styles from "./home.scss";
 import PropTypes from "prop-types";
 import React from "react";
+import ReactJoyride, { STATUS } from 'react-joyride';
 
 export default function PureHome({ title, children, imgUrl }) {
   return <div className={styles.container} style={{ backgroundImage: `url("${imgUrl}")` }}>

@@ -15,11 +15,14 @@
 
  .outroContainer {
     /* Rectangle 49 */
-    position: absolute;
+    position: relative;
+    margin: auto;
     width: 312px;
     height: 400px;
-    left: 27px;
-    top: 98px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     /* Grey-100 */
     background: #FAFAFD;
     border-radius: 7.05466px;
