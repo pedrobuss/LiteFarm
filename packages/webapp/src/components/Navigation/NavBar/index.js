@@ -24,6 +24,8 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
     const newInteraction = onOverlay ? initialState : {...initialState, [tooltipName]: !tooltipInteraction[tooltipName]};
     setTooltipInteraction(newInteraction);
     setOneTooltipOpen(Object.keys(newInteraction).some((k) => newInteraction[k]));
+    console.log("tooltip interaction")
+    console.log(tooltipInteraction.switchFarmOutro)
   }
 
 
@@ -67,8 +69,18 @@ export default function PureNavBar({ logo, children, steps, resetSpotlight, auth
 
         }
         <FarmSwitchOutro>
-        <input id="firstStep" type="image" src={MyFarmIcon} className={styles.actionItem}/>
+        <input id="firstStep" type="image" src={MyFarmIcon} className={styles.actionItem} onClick={() =>changeInteraction('switchFarmOutro')}/>
         </FarmSwitchOutro>
+        {
+          tooltipInteraction.switchFarmOutro && <div style={{
+            position: "fixed",
+            zIndex: 100,
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            backgroundColor: "rgba(25, 25, 40, 0.8)"}} onClick={() => changeInteraction('', true)} />
+        }
         <input id="secondStep" type="image" src={NotifIcon} className={styles.actionItem}/>
         <ProfileFloater auth={auth}>
           <input data-testid="thirdStep" id="thirdStep" type="image" src={ProfilePicture} className={styles.profilePicture} onClick={() =>changeInteraction('profile')} />

@@ -6,7 +6,7 @@ import React from "react";
 export default function FarmSwitchPureOutroSplash({onContinue}) {
 
   // TODO: Get farm name from store 
-  const newFarm = "Garden of Eden.";
+  const newFarm = "Garden of Eden";
   const descriptionTop = "The barn door is secure.";
   const descriptionBottom = "Heading to ";
 
@@ -25,7 +25,6 @@ export default function FarmSwitchPureOutroSplash({onContinue}) {
       </div>
       <div className={styles.descriptionBottom}>
         {descriptionBottom}
-      {/* </div> */}
         <div className={styles.bold}>
           {newFarm}
         </div>
