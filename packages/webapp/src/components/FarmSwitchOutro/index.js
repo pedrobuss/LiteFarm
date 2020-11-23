@@ -7,7 +7,8 @@ export default function FarmSwitchPureOutroSplash({onContinue}) {
 
   // TODO: Get farm name from store 
   const newFarm = "Garden of Eden.";
-  const description = "The barn door is secure. Heading to " + newFarm;
+  const descriptionTop = "The barn door is secure.";
+  const descriptionBottom = "Heading to ";
 
   
   return (
@@ -19,8 +20,15 @@ export default function FarmSwitchPureOutroSplash({onContinue}) {
         <img src={OutroImg}/>
       </div>
 
-      <div className={styles.description}>
-          {description}
+      <div className={styles.descriptionTop}>
+          {descriptionTop}
+      </div>
+      <div className={styles.descriptionBottom}>
+        {descriptionBottom}
+      {/* </div> */}
+        <div className={styles.bold}>
+          {newFarm}
+        </div>
       </div>
       <Button className={styles.bottomContainer} children="Let's Go!"></Button>
 

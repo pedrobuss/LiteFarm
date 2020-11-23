@@ -15,21 +15,16 @@
 
  .outroContainer {
     /* Rectangle 49 */
-    position: relative;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
     width: 312px;
     height: 400px;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     /* Grey-100 */
     background: #FAFAFD;
     border-radius: 7.05466px;
   }
 
-.description {
-    // -webkit-font-smoothing: antialiased;
+.descriptionTop {
     margin-top:-40px;
     font-family: "Open Sans", "SansSerif", serif;
     padding-left: 20px;
@@ -43,6 +38,28 @@
     align-items: center;
     /* Grey-900 */
     color: #282B36;
+}
+
+.descriptionBottom {
+  font-family: "Open Sans", "SansSerif", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  padding-left: 20px;
+  float: left;
+  // width: 150px;
+}
+
+.bold {
+  -webkit-font-smoothing: antialiased;
+  margin-left: 108px;
+  color: #282B36;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  margin-top: -31px;
 }
 
 .imgContainer {
