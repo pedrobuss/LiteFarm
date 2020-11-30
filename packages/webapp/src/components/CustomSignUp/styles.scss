@@ -1,0 +1,90 @@
+/*
+ *  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ *  This file (styles.scss) is part of LiteFarm.
+ *
+ *  LiteFarm is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  LiteFarm is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details, see <https://www.gnu.org/licenses/>.
+ */
+
+.home .lander {
+  text-align: left;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 146px;
+  height: 110.24px;
+  left: 107px;
+  margin: auto;
+  padding-top: 84px;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.sso {
+    margin: auto;
+    display: flex;
+    width: 312px; 
+    height: 48px;
+    padding-top: 221px;
+    padding-left: 24px;
+    color: #282B36;
+    font-family: "Open Sans", "SansSerif", serif;
+}
+
+.lineBreak {
+    margin: auto;
+    width: 326px;
+    height: 24px;
+    padding-left: 24px;
+    padding-top: 100px;
+}
+
+.manualInput {
+  margin: auto;
+  width: 312px;
+  height: 48px;
+  padding-left: 24px;
+  padding-top: 63px;
+  align-items: left;
+}
+
+.manualInputContainer {
+  width: 312px;
+  height: 48px;
+  border: 1px solid #D4DAE3;
+}
+
+.buttonContainer {
+  margin: auto;
+  padding-left: 405px;
+  padding-top: 226px;
+  height: 100px;
+
+}
+
+.button {
+  width: 312px;
+  // height: 48px;
+  color: white;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  /* Grey-400 */
+
+  background: #D4DAE3;
+}
+
+
