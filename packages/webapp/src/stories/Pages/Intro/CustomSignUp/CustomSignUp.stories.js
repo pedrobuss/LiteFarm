@@ -1,11 +1,8 @@
 import React from 'react';
 import PureCustomSignUp from '../../../../components/CustomSignUp';
-import decorators from '../../config/decorators';
-
 export default {
   title: 'Form/Intro/7-CustomSignUp',
   component: PureCustomSignUp,
-  // decorators: decorators,
 };
 
 const Template = (args) => <PureCustomSignUp {...args} />;
