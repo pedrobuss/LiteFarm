@@ -9,29 +9,64 @@ import Footer from '../Footer';
 export default function PureCustomSignUp({ ssoSignUp, onContinue }) {
 
   return (
+    // <>
+    // <div className={styles.home}>
+    //   <div className={styles.lander}>
+    //     <div className={styles.logo}>
+    //       <img src={Logo}/>
+    //     </div>
+    //     <div className={styles.sso}>
+    //       <Button fullLength children='CONTINUE WITH GOOGLE' color='secondary' onClick={ssoSignUp} />
+    //     </div>
+    //     <div className={styles.lineBreak}>
+    //       <img src={LineBreak}/>
+    //     </div>
+    //     <div className={styles.manualInput}>
+    //       <Input className={styles.manualInputContainer} label='Enter your email' />
+    //     </div>
+    //     </div>
+    // </div>
+    //   {/* <Footer className={styles.buttonContainer} style={{ position: 'sticky', bottom: '0' }}
+    //             children={<><Button className={styles.button} fullLength color="secondary" children='Continue' onClick={onContinue}/>
+    //             </>}
+    //     >
+    //   </Footer> */}
+    //    <Footer style={{ position: 'sticky', bottom: '0' }}
+    //           children={<><Button fullLength color="secondary" children='Go back' onClick={ssoSignUp}/>
+
+    //             <Button fullLength children='Finish' onClick={onContinue}/>
+    //           </>}
+    //   >
+    //   </Footer>
+      
+    // </>
+
     <>
     <div className={styles.home}>
       <div className={styles.lander}>
-        <div className={styles.logo}>
+        <div className={styles.greetContainer}>
           <img src={Logo}/>
-        </div>
-        <div className={styles.sso}>
+          <div className={styles.ssoButton}>
           <Button fullLength children='CONTINUE WITH GOOGLE' color='secondary' onClick={ssoSignUp} />
-        </div>
-        <div className={styles.lineBreak}>
+          </div>
+          <div className={styles.lineBreak}>
           <img src={LineBreak}/>
-        </div>
-        <div className={styles.manualInput}>
+          </div>
+          <div className={styles.continueButton}>
           <Input className={styles.manualInputContainer} label='Enter your email' />
+          </div>
         </div>
-        </div>
+
+      </div>
+
     </div>
-      <Footer className={styles.buttonContainer} style={{ position: 'sticky', bottom: '0' }}
-                children={<><Button className={styles.button} fullLength color="secondary" children='Continue' onClick={onContinue}/>
-                </>}
-        >
-      </Footer>
-      
-    </>
+    <Footer style={{ position: 'sticky', bottom: '0' }}
+            children={<>
+
+              <Button fullLength children='Continue' onClick={onContinue}/>
+            </>}
+    >
+    </Footer>
+  </>
   )
 }

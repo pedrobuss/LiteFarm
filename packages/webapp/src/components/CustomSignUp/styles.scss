@@ -1,90 +1,131 @@
-/*
- *  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
- *  This file (styles.scss) is part of LiteFarm.
- *
- *  LiteFarm is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  LiteFarm is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *  GNU General Public License for more details, see <https://www.gnu.org/licenses/>.
- */
+// /*
+//  *  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+//  *  This file (styles.scss) is part of LiteFarm.
+//  *
+//  *  LiteFarm is free software: you can redistribute it and/or modify
+//  *  it under the terms of the GNU General Public License as published by
+//  *  the Free Software Foundation, either version 3 of the License, or
+//  *  (at your option) any later version.
+//  *
+//  *  LiteFarm is distributed in the hope that it will be useful,
+//  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+//  *  GNU General Public License for more details, see <https://www.gnu.org/licenses/>.
+//  */
 
-.home .lander {
+.manualInputContainer {
+  // width: 312px;
+  height: 48px;
+  border: 1px solid #D4DAE3;
+}
+
+ .home .lander {
   text-align: left;
   color: var(--primary);
   display: flex;
   flex-direction: column;
 }
 
-.logo {
-  width: 146px;
-  height: 110.24px;
-  left: 107px;
+.ssoButton {
+  padding-top: 70px;
+}
+
+.lineBreak {
+  padding-top: 30px;
+  color: #282B36;
+  font-family: "Open Sans", "SansSerif", serif;
+}
+
+.continueButton {
+  padding-top: 30px;
+  color: #282B36;
+  font-family: "Open Sans", "SansSerif", serif;
+}
+
+.bottomContainer {
+  width: 240px;
+  position: fixed;
+  bottom: 0;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+  align-items: center;
+  padding: 2% 5% 2% 5%;
+  background: white;
+  box-shadow: 0 -5px 5px -5px #333;
+  border-radius: 10px;
+}
+
+.home .lander h1 {
+  font-weight: 600;
+  //mix-blend-mode: difference;
+}
+
+.home {
+  padding: 10vh 0 0 0;
+  flex: 1;
+}
+
+.submit {
+  margin-top: 7px;
+}
+
+.field {
+  display: block;
+  width: 240px;
+  margin: 0 auto;
+}
+
+.greetContainer {
   margin: auto;
-  padding-top: 84px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   overflow: visible;
 }
 
-.sso {
-    margin: auto;
-    display: flex;
-    width: 312px; 
-    height: 48px;
-    padding-top: 221px;
-    padding-left: 24px;
-    color: #282B36;
-    font-family: "Open Sans", "SansSerif", serif;
+.logo {
+  max-width: 50%;
+  max-height: 50%;
 }
 
-.lineBreak {
-    margin: auto;
-    width: 326px;
-    height: 24px;
-    padding-left: 24px;
-    padding-top: 100px;
+.otherPhotos {
+  max-width: 70%;
+  max-height: 70%;
+  margin-bottom: 0.5em;
 }
 
-.manualInput {
-  margin: auto;
-  width: 312px;
-  height: 48px;
-  padding-left: 24px;
-  padding-top: 63px;
-  align-items: left;
-}
+.textColor {
+  color: #028577;
 
-.manualInputContainer {
-  width: 312px;
-  height: 48px;
-  border: 1px solid #D4DAE3;
-}
+  :global(.slider-control-centerright) {
+    top: initial !important;
+    position: absolute !important;
+    bottom: -10% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
 
-.buttonContainer {
-  margin: auto;
-  padding-left: 405px;
-  padding-top: 226px;
-  height: 100px;
+  :global(.slider-control-bottomcenter) {
+    position: absolute !important;
+    bottom: initial !important;
+    left: initial !important;
+    top: 60% !important;
+    right: -10% !important;
+    transform: rotate(90deg) !important;
+    @media only screen and (max-device-width: 667px) {
+      right: -20% !important;
+    }
+  }
 
 }
 
-.button {
-  width: 312px;
-  // height: 48px;
-  color: white;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  /* Grey-400 */
-
-  background: #D4DAE3;
+.bodyText {
+  margin: 10px;
 }
 
-
+.weatherMsg{
+  font-size: 12px;
+  margin-top: 15%;
+}

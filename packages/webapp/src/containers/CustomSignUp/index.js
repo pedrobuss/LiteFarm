@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import history from '../../history';
-import PureCustomSignUp from '../../components/PureCustomSignUp';
+import  PureCustomSignUp from '../../components/CustomSignUp';
 import {manualSignUpSuccess} from "./slice";
 
 function CustomSignUp() {
