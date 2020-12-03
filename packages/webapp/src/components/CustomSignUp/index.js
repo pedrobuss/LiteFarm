@@ -52,10 +52,5 @@ export default function PureCustomSignUp({ inputs = [{}], ssoSignUp, onSubmit, d
   )
 }
 
-// border: none;
-//     color: var(--inputDisabled);
-//     background-color: var(--btnDisabled);
-//     box-shadow: none;
-
 
 
