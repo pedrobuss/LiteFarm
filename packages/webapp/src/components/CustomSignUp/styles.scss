@@ -27,19 +27,43 @@
 }
 
 .ssoButton {
+  margin: auto;
   padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.bottomButton {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.bottom {
+  padding: 10vh 0 0 0;
+  // padding-top: 2px;
 }
 
 .lineBreak {
   padding-top: 30px;
   color: #282B36;
   font-family: "Open Sans", "SansSerif", serif;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
 }
 
 .continueButton {
   padding-top: 30px;
   color: #282B36;
   font-family: "Open Sans", "SansSerif", serif;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
 }
 
 .bottomContainer {
