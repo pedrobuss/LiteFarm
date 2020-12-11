@@ -271,6 +271,12 @@
     }
   },
   "OUTRO": "MISSING",
+  "PASSWORD_RESET": {
+    "BUTTON": "MISSING",
+    "DESCRIPTIONBOTTOM": "MISSING",
+    "DESCRIPTIONTOP": "MISSING",
+    "TITLE": "MISSING"
+  },
   "PROFILE_FLOATER": {
     "HELP": "MISSING",
     "INFO": "MISSING",
@@ -465,10 +471,10 @@
   },
   "SIGNUP": {
     "DIDNT_WORK": "MISSING",
+    "GOOGLE_BUTTON": "MISSING",
     "OOPS": "MISSING",
     "PLEASE_SIGNUP": "MISSING",
-    "TITLE": "MISSING",
-    "GOOGLE_BUTTON": "MISSING"
+    "TITLE": "MISSING"
   },
   "SLIDE_MENU": {
     "DEMOS": "MISSING",

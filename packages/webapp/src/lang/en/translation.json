@@ -270,6 +270,12 @@
     }
   },
   "OUTRO": "And finally, let us show you a couple of important things!",
+  "PASSWORD_RESET": {
+    "BUTTON": "Resend Link",
+    "DESCRIPTIONBOTTOM": "Please check your email.",
+    "DESCRIPTIONTOP": "A link has been sent.",
+    "TITLE": "Link Sent"
+  },
   "PROFILE_FLOATER": {
     "HELP": "Help",
     "INFO": "My info",
@@ -464,10 +470,10 @@
   },
   "SIGNUP": {
     "DIDNT_WORK": "That didn't work.",
+    "GOOGLE_BUTTON": "CONTINUE WITH GOOGLE",
     "OOPS": "Oops!",
     "PLEASE_SIGNUP": "Please, sign up.",
-    "TITLE": "Sign Up",
-    "GOOGLE_BUTTON": "CONTINUE WITH GOOGLE"
+    "TITLE": "Sign Up"
   },
   "SLIDE_MENU": {
     "DEMOS": "Demos",
