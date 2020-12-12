@@ -23,7 +23,8 @@
     "ci": "start-server-and-test gitlab-server 5000 test-end2end",
     "e2e": "start-server-and-test start 5000 test-end2end",
     "fix-lint": "eslint src --fix",
-    "precommit": ""
+    "format": "npx prettier --write ./",
+    "precommit": "lint-staged"
   },
   "jest": {
     "verbose": true,
